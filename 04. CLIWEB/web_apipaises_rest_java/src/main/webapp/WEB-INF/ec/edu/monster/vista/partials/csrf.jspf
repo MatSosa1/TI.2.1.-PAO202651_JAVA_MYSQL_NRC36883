@@ -1,0 +1,4 @@
+<%@ page pageEncoding="UTF-8" %>
+<%-- Token CSRF (synchronizer token, lo revisa CsrfFilter). Se incluye en todo formulario POST;
+     la página que lo incluye debe declarar el taglib "c". --%>
+<input type="hidden" name="_csrf" value="<c:out value='${sessionScope.csrfToken}'/>">

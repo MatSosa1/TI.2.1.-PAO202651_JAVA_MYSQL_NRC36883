@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Jakarta EE 11 / Servlet 6.1: habilita las anotaciones (@WebServlet, @WebFilter) y EL en las JSP. -->
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_1.xsd"
+         version="6.1">
+
+    <!-- Nombre que muestra la consola de administración de Payara -->
+    <display-name>web_apipaises_rest_java</display-name>
+
+    <!-- Formularios y respuestas en UTF-8 (por defecto ISO-8859-1 rompe la ñ y las tildes) -->
+    <request-character-encoding>UTF-8</request-character-encoding>
+    <response-character-encoding>UTF-8</response-character-encoding>
+
+    <!-- El id de sesión solo en una cookie, nunca en la URL -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
+
+    <!-- Página que se abre en http://localhost:8080/web_apipaises_rest_java/ -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

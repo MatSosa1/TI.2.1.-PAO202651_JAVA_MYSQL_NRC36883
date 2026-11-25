@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">APIPaises</string>
+    <string name="app_lema">Países del mundo · Servicio REST / Java</string>
+
+    <!-- ECUD1 -->
+    <string name="login_titulo">Iniciar sesión</string>
+    <string name="login_subtitulo">Ingrese sus credenciales para continuar</string>
+    <string name="login_usuario">Usuario</string>
+    <string name="login_clave">Clave</string>
+    <string name="login_ingresar">Ingresar</string>
+    <string name="login_servidor">Servidor: %1$s</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="cerrar_sesion_pregunta">¿Desea cerrar la sesión?</string>
+    <string name="sesion">Sesión</string>
+
+    <!-- Pestañas -->
+    <string name="pestana_inicio">Inicio</string>
+    <string name="pestana_paises">Países</string>
+    <string name="pestana_api">API</string>
+    <string name="pestana_informes">Informes</string>
+    <string name="titulo_api">Consultar en la API</string>
+
+    <!-- Inicio -->
+    <string name="inicio_saludo">Hola,</string>
+    <string name="inicio_servicio">Servicio REST / Java</string>
+    <string name="inicio_paises_guardados">Países guardados</string>
+    <string name="inicio_en_base_local">en la base de datos local</string>
+    <string name="inicio_acciones">Opciones</string>
+    <string name="accion_paises">Países</string>
+    <string name="accion_paises_detalle">Liste, actualice y elimine los países guardados</string>
+    <string name="accion_api">Consultar en la API</string>
+    <string name="accion_api_detalle">Consulte un país en REST Countries y guárdelo</string>
+    <string name="accion_buscar">Buscar países</string>
+    <string name="accion_buscar_detalle">Busque por nombre, capital o región</string>
+    <string name="accion_informes">Informes</string>
+    <string name="accion_informes_detalle">Países por región, país más poblado y promedios</string>
+
+    <!-- Países (ECUD4, ECUD5, ECUD6) -->
+    <string name="buscar_nombre">Nombre</string>
+    <string name="buscar_capital">Capital</string>
+    <string name="filtrar_region">Filtrar por región</string>
+    <string name="todas">Todas</string>
+    <string name="nuevo">Nuevo</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="eliminar_pregunta">¿Eliminar el país %1$s?</string>
+    <string name="sin_paises">No hay países registrados. Use «Consultar en la API» para guardarlos</string>
+    <string name="sin_paises_region">No se encontraron países en esa región</string>
+    <string name="sin_resultados">No se encontraron países con esos criterios</string>
+    <string name="nuevo_titulo">Nuevo país</string>
+    <string name="nombre_pais">Nombre del país</string>
+    <string name="consultar">Consultar</string>
+    <string name="registrar">Registrar</string>
+    <string name="elija_pais">Elija el país a registrar</string>
+
+    <!-- Datos del país -->
+    <string name="dato_capital">Capital</string>
+    <string name="dato_region">Región</string>
+    <string name="dato_poblacion">Población</string>
+    <string name="dato_moneda">Moneda</string>
+    <string name="guardado">Guardado</string>
+    <string name="no_guardado">No guardado</string>
+
+    <!-- API (ECUD3, ECUD2) -->
+    <string name="guardar">Guardar</string>
+    <string name="guardar_pregunta">¿Guardar el país %1$s en la base de datos local?</string>
+    <string name="importar_todos">Importar todos</string>
+    <string name="importar_todos_pregunta">¿Importar todos los países desde la API REST Countries? Los nuevos se registran y los que ya existen se actualizan.</string>
+    <string name="importar_todos_ayuda">Todos los países de REST Countries a la base local</string>
+    <string name="api_ayuda">Escriba el nombre de un país, por ejemplo «ecuador», y presione Consultar.</string>
+
+    <!-- Informes (ECUD7) -->
+    <string name="informe_mas_poblado">País más poblado</string>
+    <string name="informe_grafico">Cantidad de países por región</string>
+    <string name="informe_por_region">Países por región</string>
+    <string name="informe_promedio">Promedio poblacional por región</string>
+    <string name="informe_sugerencia">Use la pestaña «API» para guardar países.</string>
+
+    <string name="si">Sí</string>
+    <string name="no">No</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="procesando">Procesando…</string>
+    <string name="error_inesperado">Ocurrió un error inesperado, intente nuevamente</string>
+</resources>

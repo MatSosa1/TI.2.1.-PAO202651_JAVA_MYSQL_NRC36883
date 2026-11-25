@@ -1,0 +1,29 @@
+<%@ page pageEncoding="UTF-8" %>
+<%--
+  Encabezado de la aplicación (logo, sello del servicio, usuario, cerrar sesión). Inclusión estática:
+    <%@ include file="partials/header.jspf" %>
+  Requiere el taglib "c" y la variable de página ctx (context path). El atributo de sesión
+  «nombre» lo guarda LoginController.
+--%>
+<header class="app-header">
+    <div class="app-header__left">
+        <span class="logo"><span class="logo__mark">AP</span>APIPaises</span>
+        <%-- Sello del servicio: este cliente consume el servicio REST desarrollado en Java --%>
+        <span class="badge" title="Servicio consumido: REST / Java">
+            <span class="badge__label">Servicio</span>
+            <span class="badge__protocol--rest">REST</span>
+            <span class="badge__platform--java">Java</span>
+        </span>
+    </div>
+
+    <div class="app-header__right">
+        <div class="user">
+            <span class="user__name"><c:out value="${sessionScope.nombre}"/></span>
+            <span class="user__role">Usuario</span>
+        </div>
+        <form method="post" action="${ctx}/logout">
+            <%@ include file="csrf.jspf" %>
+            <button class="btn btn--secondary" type="submit">Cerrar sesión</button>
+        </form>
+    </div>
+</header>

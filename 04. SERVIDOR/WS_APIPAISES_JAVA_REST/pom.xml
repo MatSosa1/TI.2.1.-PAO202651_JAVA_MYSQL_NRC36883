@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Mismo groupId que el resto de proyectos del TI -->
+    <groupId>ec.edu.monster</groupId>
+    <artifactId>WS_APIPAISES_JAVA_REST</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <!-- war = servidor RESTful desplegado en Payara 7 -->
+    <packaging>war</packaging>
+    <name>WS_APIPAISES_JAVA_REST</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Java 21: versión que fija el ERS y la que exige Payara 7 -->
+        <maven.compiler.release>21</maven.compiler.release>
+        <!-- Payara 7 implementa Jakarta EE 11 (Jakarta REST 4.0, JSON-B 3.0) -->
+        <jakartaee>11.0.0</jakartaee>
+    </properties>
+
+    <dependencies>
+        <!-- API de Jakarta EE: la implementación la pone Payara -->
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
+            <version>${jakartaee}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Lectura del JSON de REST Countries (librería que pide el taller) -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+
+        <!-- Driver JDBC de MySQL: Payara no lo trae, se empaqueta en el war -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.3.0</version>
+            <exclusions>
+                <!-- Solo lo usa X DevAPI; JDBC clásico no lo necesita -->
+                <exclusion>
+                    <groupId>com.google.protobuf</groupId>
+                    <artifactId>protobuf-java</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- ===== Solo pruebas ===== -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.11.4</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>WS_APIPAISES_JAVA_REST</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.4.0</version>
+            </plugin>
+            <!-- Ejecuta las pruebas JUnit 5 en mvn test / mvn package -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.2</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,19 @@
+<%@ page pageEncoding="UTF-8" %>
+<%--
+  Menú lateral (ECUD1 paso 7). Inclusión estática:
+    <%@ include file="partials/sidebar.jspf" %>
+  Requiere el taglib "c", la variable ctx y la variable activeNav
+  (inicio | paises | consulta | busqueda | informes) para resaltar la pantalla actual.
+--%>
+<aside class="sidebar">
+    <p class="sidebar__caption">MENÚ</p>
+    <nav aria-label="Menú principal">
+        <ul class="nav">
+            <li><a class="nav__item${activeNav eq 'inicio' ? ' nav__item--active' : ''}" href="${ctx}/menu"<c:if test="${activeNav eq 'inicio'}"> aria-current="page"</c:if>>Inicio</a></li>
+            <li><a class="nav__item${activeNav eq 'paises' ? ' nav__item--active' : ''}" href="${ctx}/paises"<c:if test="${activeNav eq 'paises'}"> aria-current="page"</c:if>>Países</a></li>
+            <li><a class="nav__item${activeNav eq 'consulta' ? ' nav__item--active' : ''}" href="${ctx}/consulta"<c:if test="${activeNav eq 'consulta'}"> aria-current="page"</c:if>>Consultar en la API</a></li>
+            <li><a class="nav__item${activeNav eq 'busqueda' ? ' nav__item--active' : ''}" href="${ctx}/busqueda"<c:if test="${activeNav eq 'busqueda'}"> aria-current="page"</c:if>>Buscar países</a></li>
+            <li><a class="nav__item${activeNav eq 'informes' ? ' nav__item--active' : ''}" href="${ctx}/informes"<c:if test="${activeNav eq 'informes'}"> aria-current="page"</c:if>>Informes</a></li>
+        </ul>
+    </nav>
+</aside>

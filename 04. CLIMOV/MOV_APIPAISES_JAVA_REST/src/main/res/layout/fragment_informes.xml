@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ECUD7 Informes: país más poblado, gráfico de barras y las tablas por región. -->
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refrescar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/lblError"
+                style="@style/AvisoError"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/contenido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <!-- País más poblado -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tarjeta_cuenta_fondo"
+                    android:orientation="vertical"
+                    android:padding="22dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/informe_mas_poblado"
+                        android:textColor="@color/texto_sobre_primario"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/lblMasPoblado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/blanco"
+                        android:textSize="28sp" />
+
+                    <TextView
+                        android:id="@+id/lblMasPobladoDetalle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/texto_sobre_primario"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/TituloSeccion"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/informe_grafico" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Tarjeta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
+
+                    <ec.edu.monster.vista.GraficoBarrasView
+                        android:id="@+id/grafico"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_margin="12dp" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    style="@style/TituloSeccion"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/informe_por_region" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Tarjeta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/tablaConteo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:divider="@drawable/divisor"
+                        android:dividerPadding="@dimen/margen_divisor"
+                        android:orientation="vertical"
+                        android:showDividers="middle" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    style="@style/TituloSeccion"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/informe_promedio" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Tarjeta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/tablaPromedio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:divider="@drawable/divisor"
+                        android:dividerPadding="@dimen/margen_divisor"
+                        android:orientation="vertical"
+                        android:showDividers="middle" />
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

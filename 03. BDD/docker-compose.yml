@@ -1,0 +1,40 @@
+# MySQL local para el servidor APIPaises (TI.2.1).
+# Los valores coinciden con la configuración del servidor (04. SERVIDOR):
+#   jdbc:mysql://localhost:3306/APIPaisesDB   usuario root / clave 12345
+#
+# Iniciar:   docker compose up -d        (dentro de "03. BDD")
+# Detener:   docker compose down
+# Reiniciar: docker compose down -v      (borra los datos; los scripts se vuelven a ejecutar)
+#
+# En el primer arranque (volumen vacío) crea las tablas y carga init.sql.
+# Otros talleres (p. ej. TI.1.1 EurekaBank) usan el mismo puerto 3306: levante uno a la vez.
+name: apipaises-ti21
+
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: apipaises-ti21-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: "12345"     # clave del taller (clase Conexion del enunciado)
+      MYSQL_DATABASE: APIPaisesDB      # los scripts de abajo crean las tablas
+      TZ: America/Guayaquil
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_0900_ai_ci
+    ports:
+      - "3306:3306"
+    volumes:
+      # Solo se ejecutan en el primer arranque, en orden alfabético
+      - ./APIPaisesDB.sql:/docker-entrypoint-initdb.d/01-APIPaisesDB.sql:ro
+      - ./init.sql:/docker-entrypoint-initdb.d/02-init.sql:ro
+      # Conserva los datos entre reinicios
+      - apipaises-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-p12345"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  apipaises-data:

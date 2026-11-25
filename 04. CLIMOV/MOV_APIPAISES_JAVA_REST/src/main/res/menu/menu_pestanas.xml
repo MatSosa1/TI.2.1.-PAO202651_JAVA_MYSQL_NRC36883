@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ECUD1 paso 7: Inicio, Países (incluye Buscar y Filtrar, ERS 9.1.1), Consultar en la API e Informes. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/pestana_inicio"
+        android:icon="@drawable/ic_inicio"
+        android:title="@string/pestana_inicio" />
+    <item
+        android:id="@+id/pestana_paises"
+        android:icon="@drawable/ic_lista"
+        android:title="@string/pestana_paises" />
+    <item
+        android:id="@+id/pestana_api"
+        android:icon="@drawable/ic_nube"
+        android:title="@string/pestana_api" />
+    <item
+        android:id="@+id/pestana_informes"
+        android:icon="@drawable/ic_grafico"
+        android:title="@string/pestana_informes" />
+</menu>

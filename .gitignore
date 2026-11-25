@@ -1,0 +1,25 @@
+# Salidas de compilación (Maven/NetBeans, Gradle/Android)
+target/
+build/
+.gradle/
+nbproject/private/
+local.properties
+*.apk
+*.aab
+
+# Configuración local con secretos (clave de MySQL, API key de REST Countries).
+# Se versiona solo la plantilla config.example.properties.
+config.properties
+!**/src/test/resources/config.properties
+
+# IDE y sistema
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Claude Code: estado local y configuración personal
+.claude/settings.local.json
+.claude/worktrees/
+*.claude.local.md
